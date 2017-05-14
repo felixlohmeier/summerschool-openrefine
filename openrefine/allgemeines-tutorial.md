@@ -1,6 +1,6 @@
 # Allgemeines Tutorial
 
-Für OpenRefine gibt es eine riesige Fülle von Tutorials, die den Einstieg erleichtern. Um die Funktionsweise kennenzulernen, ist es am einfachsten eins dieser Tutorials durchzuarbeiten.
+Für OpenRefine gibt es eine [riesige Fülle von Tutorials](https://github.com/OpenRefine/OpenRefine/wiki/External-Resources), die den Einstieg erleichtern. Um die Funktionsweise kennenzulernen, ist es am einfachsten eins dieser Tutorials durchzuarbeiten.
 
 Wir bearbeiten das folgende Tutorial:
 
