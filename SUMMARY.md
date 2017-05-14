@@ -3,7 +3,6 @@
 ## Einleitung
 
 * [Summerschool](README.md)
-* [Ziele und Ablauf](ziele-und-ablauf.md)
 * [Arbeitsumgebung](arbeitsumgebung.md)
 * [Metadatenformate und Schnittstellen](metadatenformate-und-schnittstellen.md)
 
