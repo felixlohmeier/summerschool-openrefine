@@ -5,7 +5,7 @@
 * [Summerschool](README.md)
 * [Arbeitsumgebung](arbeitsumgebung.md)
 * [Metadatenformate und Schnittstellen](metadatenformate-und-schnittstellen.md)
-* [Arbeiten mit der Kommandozeile](linux-kommandozeile/arbeiten-mit-der-kommandozeile.md)
+* [Arbeiten mit der Kommandozeile](arbeiten-mit-der-kommandozeile.md)
 
 ## Auswahl der Anwendungssoftware
 
