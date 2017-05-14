@@ -1,75 +1,64 @@
-# Skript zur Summerschool zu OpenRefine \(15.-17.5.2017, SLUB Dresden\)
+# Beispielkonfiguration für Online-Katalog mit TYPO3-find
 
-Hauptgegenstand ist die Schulung der Open-Source-Software [OpenRefine](http://www.openrefine.org) zur Verarbeitung und zur Analyse von bibliothekarischen Metadaten sowie eine praktische Einführung in die grundlegende Funktionsweise des Suchmaschinenindex [Solr](http://lucene.apache.org/solr/) und der Katalogsoftware [TYPO3-find](https://github.com/subugoe/typo3-find).
+Falls der Computer zwischenzeitlich neu gestartet wurde, muss der Suchindex Solr neu gestartet werden:
+```
+~/solr-6.5.0/bin/solr start -s ~/solr-6.5.0/example/schemaless/solr
+```
 
-## Formate {#formate}
+Die Administrationsoberfläche von TYPO3 ist unter folgender URL verfügbar: http://localhost/typo3/.
 
-* Lesefassung bei GitBook \(HTML\): 
-  [https://www.gitbook.com/read/book/felixlohmeier/summerschool-openrefine](https://www.gitbook.com/read/book/felixlohmeier/summerschool-openrefine)
-* Druckfassung bei GitBook \(PDF\): 
-  [https://www.gitbook.com/download/pdf/book/felixlohmeier/summerschool-openrefine](https://www.gitbook.com/download/pdf/book/felixlohmeier/summerschool-openrefine)
-* Repository bei GitHub \(zum Nachnutzen\): 
-  [https://github.com/felixlohmeier/summerschool-openrefine](https://github.com/felixlohmeier/summerschool-openrefine)
+## Menü Extensions
 
-## Inhalte
+* In der Liste neben dem Eintrag ```Find``` auf den Würfel klicken, um die Extension zu aktivieren
 
-Einleitung
+## Menü Page
 
-* [Ziele und Ablauf](/ziele-und-ablauf.md)
-* [Arbeitsumgebung](/arbeitsumgebung.md)
-* [Metadatenformate und Schnittstellen](/metadatenformate-und-schnittstellen.md)
+* Seite ```Home``` auswählen
+* Button +Content in Spalte "Normal" drücken und im Reiter ```Plugins``` das Plugin ```TYPO3 Find``` auswählen
+* Oben den Save-Button betätigen.
 
-Linux Kommandozeile
+## Menü List
 
-* [Arbeiten mit der Kommandozeile](/linux-kommandozeile/arbeiten-mit-der-kommandozeile.md)
-* [Beispieldaten laden und ansehen](/linux-kommandozeile/beispieldaten-laden-und-ansehen.md)
+* Gleiche Seite auswählen, auf der vorhin das Plugin eingefügt wurde (müsste noch vorausgewählt sein)
+* Das Template ```Main TypoScript Rendering``` bearbeiten
+* Reiter ```General```: In Textfeld ```Setup``` den vorhandenen Inhalt durch Folgendes ersetzen
+```
+page = PAGE
+page.100 < styles.content.get
+page.javascriptLibs.jQuery = 1
+page.includeJS.find = EXT:find/Resources/Public/JavaScript/find.js
+plugin.tx_find.features.requireCHashArgumentForActionArguments = 0
+plugin.tx_find.settings {
+        connections {
+                default {
+                        options {
+                                host = localhost
+                                port = 8983
+                                path = /solr/gettingstarted
+                        }
+                }
+        }
+        standardFields {
+                title = title
+                snippet = author
+        }
+        facets {
+                10 {
+                        id = title
+                        field = title
+                        sortOrder = count
+                }
+                20 {
+                        id = author
+                        field = author
+                        sortOrder = count
+                }
+        }
+}
+```
+* Reiter ```Includes```: Rechts bei ```available items``` das Item ```Find (find)``` anklicken.
+* Oben den Save-Button betätigen
 
-Auswahl der Anwendungssoftware
+Rufen Sie anschließend die Webseite http://localhost auf. Der Katalog sollte erscheinen.
 
-* [Open-Source-Software für Verarbeitung von Metadaten](/auswahl-der-anwendungssoftware/open-source-software-fur-verarbeitung-von-metadaten.md)
-* [Auswahl der Software für die Summerschool](/auswahl-der-anwendungssoftware/auswahl-der-software-fur-die-summerschool.md)
-
-OpenRefine
-
-* [Installation von OpenRefine](/openrefine/installation-von-openrefine.md)
-* [Allgemeines Tutorial](/openrefine/allgemeines-tutorial.md)
-* [Automatisierung](/openrefine/automatisierung.md)
-* [Verarbeitung von bibliothekarischen Metadaten](/openrefine/verarbeitung-von-bibliothekarischen-metadaten.md)
-
-MarcEdit
-
-* [Installation von MarcEdit](/marcedit/installation-von-marcedit.md)
-* [Verwendung mit OpenRefine](/marcedit/verwendung-mit-openrefine.md)
-* [Abfrage von Schnittstellen](/marcedit/abfrage-von-schnittstellen.md)
-
-Anwendungsfall 1
-
-* [Konvertierung von MARC21 in TSV mit MarcEdit](/anwendungsfall-1/konvertierung-von-marc21-in-tsv-mit-marcedit.md)
-* [Transformation mit OpenRefine in finc-Schema](/anwendungsfall-1/transformation-mit-openrefine-in-finc-schema.md)
-
-Weitere Anwendungsfälle
-
-* [Metadaten eines Anbieters im CSV-Format](/weitere-anwendungsfalle/metadaten-eines-anbieters-im-csv-format.md)
-* [Nachlässe aus Kalliope via SRU](/weitere-anwendungsfalle/nachlasse-aus-kalliope-via-sru.md)
-* [CSV zu MIDAS-XML und MIDAS-XML zu Excel](/weitere-anwendungsfalle/csv-zu-midas-xml-und-midas-xml-zu-excel.md)
-* [Dublin Core XML manipulieren](/weitere-anwendungsfalle/dublin-core-xml-manipulieren.md)
-* [RDF vom AV-Portal der TIB](/weitere-anwendungsfalle/rdf-vom-av-portal-der-tib.md)
-
-Suchindex Solr
-
-* [Installation von Solr](/suchindex-solr/installation-von-solr.md)
-* [Daten in Solr laden](/suchindex-solr/daten-in-solr-laden.md)
-* [Konfiguration des Schemas](/suchindex-solr/konfiguration-des-schemas.md)
-
-Katalog mit TYPO3-find
-
-* [Installation von TYPO3 und TYPO3-find](/katalog-mit-typo3-find/installation-von-typo3-und-typo3-find.md)
-* [Beispielkonfiguration für Online-Katalog mit TYPO3-find](/katalog-mit-typo3-find/beispielkonfiguration-fur-online-katalog-mit-typo3-find.md)
-* [Anpassungsmöglichkeiten TYPO3-find](/katalog-mit-typo3-find/anpassungsmoglichkeiten-typo3-find.md)
-
-## Lizenz {#lizenz}
-
-Dieses Werk ist lizenziert unter einer [Creative Commons Namensnennung 4.0 International Lizenz](http://creativecommons.org/licenses/by/4.0/)
-
-[![](https://i.creativecommons.org/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)
-
+Über das Template im Textfeld ```Setup``` kann TYPO3-find konfiguriert werden. Die Funktionen und Konfigurationsmöglichkeiten sind in der Dokumentation beschrieben: http://typo3-find.readthedocs.io/en/latest/index.html

@@ -5,11 +5,7 @@
 * [Summerschool](README.md)
 * [Arbeitsumgebung](arbeitsumgebung.md)
 * [Metadatenformate und Schnittstellen](metadatenformate-und-schnittstellen.md)
-
-## Linux Kommandozeile
-
 * [Arbeiten mit der Kommandozeile](linux-kommandozeile/arbeiten-mit-der-kommandozeile.md)
-* [Beispieldaten laden und ansehen](linux-kommandozeile/beispieldaten-laden-und-ansehen.md)
 
 ## Auswahl der Anwendungssoftware
 
@@ -27,12 +23,10 @@
 
 * [Installation von MarcEdit](marcedit/installation-von-marcedit.md)
 * [Verwendung mit OpenRefine](marcedit/verwendung-mit-openrefine.md)
-* [Abfrage von Schnittstellen](marcedit/abfrage-von-schnittstellen.md)
 
 ## Anwendungsfall MARC21
 
-* [Konvertierung von MARC21 in TSV mit MarcEdit](anwendungsfall-marc21/konvertierung-von-marc21-in-tsv-mit-marcedit.md)
-* [Vorverarbeitung mit OpenRefine](anwendungsfall-marc21/vorverarbeitung-mit-openrefine.md)
+* [Vorverarbeitung mit MarcEdit und OpenRefine](anwendungsfall-marc21/vorverarbeitung-mit-marcedit-und-openrefine.md)
 * [Transformation mit OpenRefine in finc-Schema](anwendungsfall-marc21/transformation-mit-openrefine-in-finc-schema.md)
 
 ## Weitere Anwendungsfälle
@@ -53,5 +47,4 @@
 
 * [Installation von TYPO3 und TYPO3-find](katalog-mit-typo3-find/installation-von-typo3-und-typo3-find.md)
 * [Beispielkonfiguration für Online-Katalog mit TYPO3-find](katalog-mit-typo3-find/beispielkonfiguration-fur-online-katalog-mit-typo3-find.md)
-* [Anpassungsmöglichkeiten TYPO3-find](katalog-mit-typo3-find/anpassungsmoglichkeiten-typo3-find.md)
 
