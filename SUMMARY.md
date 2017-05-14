@@ -9,8 +9,8 @@
 
 ## Linux Kommandozeile
 
-* [Arbeiten mit der Kommandozeile](arbeiten-mit-der-kommandozeile.md)
-* [Beispieldaten laden und ansehen](beispieldaten-laden-und-ansehen.md)
+* [Arbeiten mit der Kommandozeile](linux-kommandozeile/arbeiten-mit-der-kommandozeile.md)
+* [Beispieldaten laden und ansehen](linux-kommandozeile/beispieldaten-laden-und-ansehen.md)
 
 ## Auswahl der Anwendungssoftware
 
@@ -19,41 +19,41 @@
 
 ## OpenRefine
 
-* Installation von OpenRefine
-* Allgemeines Tutorial
-* Automatisierung
-* Verarbeitung von bibliothekarischen Metadaten
+* [Installation von OpenRefine](openrefine/installation-von-openrefine.md)
+* [Allgemeines Tutorial](openrefine/allgemeines-tutorial.md)
+* [Automatisierung](openrefine/automatisierung.md)
+* [Verarbeitung von bibliothekarischen Metadaten](openrefine/verarbeitung-von-bibliothekarischen-metadaten.md)
 
 ## MarcEdit
 
-* Installation von MarcEdit
-* Verwendung mit OpenRefine
-* Abfrage von Schnittstellen
+* [Installation von MarcEdit](marcedit/installation-von-marcedit.md)
+* [Verwendung mit OpenRefine](marcedit/verwendung-mit-openrefine.md)
+* [Abfrage von Schnittstellen](marcedit/abfrage-von-schnittstellen.md)
 
 ## Anwendungsfall 1
 
-* Konvertierung von MARC21 in TSV mit MarcEdit
-* Transformation mit OpenRefine in finc-Schema
+* [Konvertierung von MARC21 in TSV mit MarcEdit](anwendungsfall-1/konvertierung-von-marc21-in-tsv-mit-marcedit.md)
+* [Transformation mit OpenRefine in finc-Schema](anwendungsfall-1/transformation-mit-openrefine-in-finc-schema.md)
 
 ## Weitere Anwendungsfälle
 
-* Metadaten eines Anbieters im CSV-Format
-* Nachlässe aus Kalliope via SRU
-* CSV zu MIDAS-XML und MIDAS-XML zu Excel
-* Dublin Core XML manipulieren
-* RDF vom AV-Portal der TIB
+* [Metadaten eines Anbieters im CSV-Format](weitere-anwendungsfalle/metadaten-eines-anbieters-im-csv-format.md)
+* [Nachlässe aus Kalliope via SRU](weitere-anwendungsfalle/nachlasse-aus-kalliope-via-sru.md)
+* [CSV zu MIDAS-XML und MIDAS-XML zu Excel](weitere-anwendungsfalle/csv-zu-midas-xml-und-midas-xml-zu-excel.md)
+* [Dublin Core XML manipulieren](weitere-anwendungsfalle/dublin-core-xml-manipulieren.md)
+* [RDF vom AV-Portal der TIB](weitere-anwendungsfalle/rdf-vom-av-portal-der-tib.md)
 
 ## Suchindex Solr
 
-* Installation von Solr
-* Daten in Solr laden
-* Konfiguration des Schemas
+* [Installation von Solr](suchindex-solr/installation-von-solr.md)
+* [Daten in Solr laden](suchindex-solr/daten-in-solr-laden.md)
+* [Konfiguration des Schemas](suchindex-solr/konfiguration-des-schemas.md)
 
 ## Katalog mit TYPO3-find
 
-* Installation von TYPO3 und TYPO3-find
-* Beispielkonfiguration für Online-Katalog mit TYPO3-find
-* Anpassungsmöglichkeiten TYPO3-find
+* [Installation von TYPO3 und TYPO3-find](katalog-mit-typo3-find/installation-von-typo3-und-typo3-find.md)
+* [Beispielkonfiguration für Online-Katalog mit TYPO3-find](katalog-mit-typo3-find/beispielkonfiguration-fur-online-katalog-mit-typo3-find.md)
+* [Anpassungsmöglichkeiten TYPO3-find](katalog-mit-typo3-find/anpassungsmoglichkeiten-typo3-find.md)
 
 ## Zwischenfazit
 
