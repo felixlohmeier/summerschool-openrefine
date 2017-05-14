@@ -55,8 +55,3 @@
 * [Beispielkonfiguration für Online-Katalog mit TYPO3-find](katalog-mit-typo3-find/beispielkonfiguration-fur-online-katalog-mit-typo3-find.md)
 * [Anpassungsmöglichkeiten TYPO3-find](katalog-mit-typo3-find/anpassungsmoglichkeiten-typo3-find.md)
 
-## Zwischenfazit
-
-* Was haben wir erreicht?
-* Was fehlt für einen Produktivbetrieb?
-
