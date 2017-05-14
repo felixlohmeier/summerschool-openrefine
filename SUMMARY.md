@@ -33,6 +33,7 @@
 ## Anwendungsfall MARC21
 
 * [Konvertierung von MARC21 in TSV mit MarcEdit](anwendungsfall-marc21/konvertierung-von-marc21-in-tsv-mit-marcedit.md)
+* [Vorverarbeitung mit OpenRefine](anwendungsfall-marc21/vorverarbeitung-mit-openrefine.md)
 * [Transformation mit OpenRefine in finc-Schema](anwendungsfall-marc21/transformation-mit-openrefine-in-finc-schema.md)
 
 ## Weitere Anwendungsfälle
