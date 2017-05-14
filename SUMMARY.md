@@ -30,10 +30,10 @@
 * [Verwendung mit OpenRefine](marcedit/verwendung-mit-openrefine.md)
 * [Abfrage von Schnittstellen](marcedit/abfrage-von-schnittstellen.md)
 
-## Anwendungsfall 1
+## Anwendungsfall MARC21
 
-* [Konvertierung von MARC21 in TSV mit MarcEdit](anwendungsfall-1/konvertierung-von-marc21-in-tsv-mit-marcedit.md)
-* [Transformation mit OpenRefine in finc-Schema](anwendungsfall-1/transformation-mit-openrefine-in-finc-schema.md)
+* [Konvertierung von MARC21 in TSV mit MarcEdit](anwendungsfall-marc21/konvertierung-von-marc21-in-tsv-mit-marcedit.md)
+* [Transformation mit OpenRefine in finc-Schema](anwendungsfall-marc21/transformation-mit-openrefine-in-finc-schema.md)
 
 ## Weitere Anwendungsfälle
 
