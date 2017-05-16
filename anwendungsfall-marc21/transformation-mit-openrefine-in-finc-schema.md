@@ -4,19 +4,30 @@ Ziel: Daten für den Import in den Suchindex vorbereiten
 
 MARC21 ist sehr komplex und das [finc-Schema](https://github.com/finc/index/blob/master/schema.xml) hat ebenfalls etliche Felder, die teilweise kompliziert zu bilden sind. In dieser Summerschool können wir daher nur einen Teil erproben.
 
-## Werte belegen \(am Beispiel von Feldern 001 und 245\)
+## Felder definieren
 
 Arbeitstabelle \(in Summerschool erstellt\): [openrefine/wiley.xls](/openrefine/wiley.xls)
 
+Neue Spalte anlegen:
+
+* column Subfields / Edit column / Add column based on this column... / Column Name: finc / Expression: ""
+
+Felder definieren \(Beispiel für Titel = MARC 245\):
+
 * show as: rows
-* column Tags / Facet / text facet / 245
-* column Subfields / Facet / text facet / "a", "b", "c"
-* column Tags / edit cells / transform... / "title"
+* column Tags / Facet / text facet / "245" auswählen
+* column Subfields / Facet / text facet / "a" und "b" auswählen
+* column Indicators / Facet / text facet / "00", "02" und "04" auswählen
+* column finc / edit cells / transform... / "title"
 * close facets
-* column Tags / Facet / text facet / 001
-* column Tags / edit cells / transform... / "id"
+
+Neue Zeilen einfügen \(ist in OpenRefine nur mit einem Trick möglich\):
+
+* Die Information in MARC LDR wird nicht benötigt. Wir können diese Zeile für den "Trick" benutzen.
+* column Tags / Facet / text facet / "LDR" auswählen
+* column Content / edit cells / transform... / Expression: ",,,,," \(so viele Kommata wie sie Zeilen haben wollen\)
+* column Content / edit cells / Split multi-valued cells / Separator: ,
 * close facet
-* ...
 
 ## Transponieren
 
