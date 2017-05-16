@@ -10,10 +10,13 @@ unzip marcedit.bin.zip
 ## Benötigte Programmbibliotheken installieren
 
 ```
-sudo sh -c 'echo "deb http://ftp.indexdata.dk/ubuntu xenial main
-deb-src http://ftp.indexdata.dk/ubuntu xenial main" >> /etc/apt/sources.list'
+sudo sh -c 'echo "deb http://ftp.indexdata.dk/ubuntu xenial main deb-src http://ftp.indexdata.dk/ubuntu xenial main" >> /etc/apt/sources.list'
+```
+
+```
 wget http://ftp.indexdata.dk/debian/indexdata.asc
 sudo apt-key add indexdata.asc
+sudo apt-get update
 sudo apt-get install mono-complete zlibc libyaz5 libyaz5-dev
 ```
 
@@ -34,4 +37,5 @@ echo "<?xml version="1.0" encoding="utf-8" ?>
 mono ~/marcedit/MarcEdit.exe
 ```
 
-Beim ersten Start muss noch im Menü ```Locations``` der Pfad zur Programmbibliothek Mono (```Mono Path```) angegeben werden: ```/usr/bin/mono```
+Beim ersten Start muss noch im Menü `Locations` der Pfad zur Programmbibliothek Mono \(`Mono Path`\) angegeben werden: `/usr/bin/mono`
+
