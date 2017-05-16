@@ -35,5 +35,10 @@ Führen Sie folgende Transformationsschritte in OpenRefine durch:
 * Show: 5 rows
 * Show as: records
 
+## Optional: Transformationsschritte als JSON-Konfiguration
+
+* Alle Transformationsschritte oben als JSON-Konfiguration: [openrefine/marc.json](/openrefine/marc.json)
+* In der Summerschool erarbeitete Alternativlösung: [openrefine/marc\_alternativ.json](/openrefine/marc_alternativ.json)
+
 
 
