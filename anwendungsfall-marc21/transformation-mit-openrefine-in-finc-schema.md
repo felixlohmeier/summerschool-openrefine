@@ -4,7 +4,9 @@ Ziel: Daten für den Import in den Suchindex vorbereiten
 
 MARC21 ist sehr komplex und das [finc-Schema](https://github.com/finc/index/blob/master/schema.xml) hat ebenfalls etliche Felder, die teilweise kompliziert zu bilden sind. In dieser Summerschool können wir daher nur einen Teil erproben.
 
-## Werte belegen (am Beispiel von Feldern 001 und 245)
+## Werte belegen \(am Beispiel von Feldern 001 und 245\)
+
+Arbeitstabelle \(in Summerschool erstellt\): [openrefine/wiley.xls](/openrefine/wiley.xls)
 
 * show as: rows
 * column Tags / Facet / text facet / 245
@@ -18,7 +20,7 @@ MARC21 ist sehr komplex und das [finc-Schema](https://github.com/finc/index/blob
 
 ## Transponieren
 
-* All / Edit columns / Re-order / remove columns / Spalten "RecordNumber", "Indicators", "Subfields2" nach rechts bewegen (d.h. löschen)
+* All / Edit columns / Re-order / remove columns / Spalten "RecordNumber", "Indicators", "Subfields2" nach rechts bewegen \(d.h. löschen\)
 * column Tags / Facet / text facet / include: "id", "title", "..." / invert
 * All / Edit rows / Remove all matching rows
 * close facet
@@ -29,6 +31,7 @@ MARC21 ist sehr komplex und das [finc-Schema](https://github.com/finc/index/blob
 * close facet
 * Column key / transpose / columnize by key/value columns / ok
 
-## Export 
+## Export
 
-Wählen Sie oben rechts im Menü Export den Menüpunkt ```Tab-separated-value```
+Wählen Sie oben rechts im Menü Export den Menüpunkt `Tab-separated-value`
+
