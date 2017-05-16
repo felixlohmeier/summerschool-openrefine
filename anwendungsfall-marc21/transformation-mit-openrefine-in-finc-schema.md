@@ -21,13 +21,14 @@ Felder definieren \(Beispiel für Titel = MARC 245\):
 * column finc / edit cells / transform... / "title"
 * close facets
 
-Neue Zeilen einfügen \(ist in OpenRefine nur mit einem Trick möglich\):
+Neue Zeile einfügen \(ist in OpenRefine nur mit einem Trick möglich\):
 
 * Die Information in MARC LDR wird nicht benötigt. Wir können diese Zeile für den "Trick" benutzen.
 * column Tags / Facet / text facet / "LDR" auswählen
-* column Content / edit cells / transform... / Expression: ",,,,," \(so viele Kommata wie sie Zeilen haben wollen\)
-* column Content / edit cells / Split multi-valued cells / Separator: ,
+* column Content / edit cells / transform... / Expression: "NEUEZEILE"
+* column Content / edit cells / Split multi-valued cells / Separator: NEUEZEILE
 * close facet
+* Die neue Zeile kann nun über facet by blank ausgewählt werden: column Tags / Facet / Customized facets / facet by blank / true
 
 ## Transponieren
 
