@@ -10,14 +10,14 @@ OpenRefine verfügt über hilfreiche Undo/Redo-Funktionen, mit denen Sie auch al
 
 Transformationsregeln extrahieren (altes Projekt):
 
-* {%s%}Oben links Menü Undo / Redo den Button Extract... drücken{%ends%}
-* {%s%}Alles im rechten Textfeld in die Zwischenablage kopieren (z.B. mit STRG+A und STRG+C){%ends%}
+* Oben links Menü Undo / Redo den Button Extract... drücken
+* Alles im rechten Textfeld in die Zwischenablage kopieren (z.B. mit STRG+A und STRG+C)
 
 Transformationsregeln anwenden (neues Projekt):
 
 * Neues Projekt erstellen
-* {%s%}Oben links Menü Undo / Redo den Button Apply... drücken{%ends%}
-* {%s%}Den Inhalt der Zwischenablage einfügen (z.B. mit STRG+V) und den Button Perform Operations drücken.{%ends%}
+* Oben links Menü Undo / Redo den Button Apply... drücken
+* Den Inhalt der Zwischenablage einfügen (z.B. mit STRG+V) und den Button Perform Operations drücken.
 
 ## Download des Shell-Scripts openrefine-batch
 
