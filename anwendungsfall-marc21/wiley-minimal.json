@@ -1,0 +1,931 @@
+[
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Column",
+    "columnName": "Column"
+  },
+  {
+    "op": "core/row-star",
+    "description": "Star rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "mode": "text",
+          "caseSensitive": false,
+          "query": "$",
+          "name": "Content",
+          "type": "text",
+          "columnName": "Content"
+        }
+      ]
+    },
+    "starred": true
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Content using expression grel:value.slice(1)",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "mode": "text",
+          "caseSensitive": false,
+          "query": "$",
+          "name": "Content",
+          "type": "text",
+          "columnName": "Content"
+        }
+      ]
+    },
+    "columnName": "Content",
+    "expression": "grel:value.slice(1)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/multivalued-cell-split",
+    "description": "Split multi-valued cells in column Content",
+    "columnName": "Content",
+    "keyColumnName": "RecordNumber",
+    "separator": "$",
+    "mode": "plain"
+  },
+  {
+    "op": "core/row-star",
+    "description": "Star rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "isBlank(value)",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "RecordNumber",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "RecordNumber"
+        }
+      ]
+    },
+    "starred": true
+  },
+  {
+    "op": "core/column-addition",
+    "description": "Create column Subfields at index 4 based on column Content using expression grel:value.get(0)",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "row.starred",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": ""
+        }
+      ]
+    },
+    "newColumnName": "Subfields",
+    "columnInsertIndex": 4,
+    "baseColumnName": "Content",
+    "expression": "grel:value.get(0)",
+    "onError": "set-to-blank"
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Content using expression grel:value.slice(1)",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "row.starred",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": ""
+        }
+      ]
+    },
+    "columnName": "Content",
+    "expression": "grel:value.slice(1)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/fill-down",
+    "description": "Fill down cells in column RecordNumber",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "row.starred",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": ""
+        }
+      ]
+    },
+    "columnName": "RecordNumber"
+  },
+  {
+    "op": "core/fill-down",
+    "description": "Fill down cells in column Tags",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "row.starred",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": ""
+        }
+      ]
+    },
+    "columnName": "Tags"
+  },
+  {
+    "op": "core/fill-down",
+    "description": "Fill down cells in column Indicators",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "row.starred",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": ""
+        }
+      ]
+    },
+    "columnName": "Indicators"
+  },
+  {
+    "op": "core/row-star",
+    "description": "Unstar rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "starred": false
+  },
+  {
+    "op": "core/blank-down",
+    "description": "Blank down cells in column RecordNumber",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "RecordNumber"
+  },
+  {
+    "op": "core/column-addition",
+    "description": "Create column finc at index 5 based on column Subfields using expression grel:\"\"",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "newColumnName": "finc",
+    "columnInsertIndex": 5,
+    "baseColumnName": "Subfields",
+    "expression": "grel:\"\"",
+    "onError": "set-to-blank"
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column finc using expression grel:\"author\"",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "100",
+                "l": "100"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Tags",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Tags"
+        },
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "a",
+                "l": "a"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Subfields",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Subfields"
+        },
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "1\\",
+                "l": "1\\"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Indicators",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Indicators"
+        }
+      ]
+    },
+    "columnName": "finc",
+    "expression": "grel:\"author\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column finc using expression grel:\"id\"",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "001",
+                "l": "001"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Tags",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Tags"
+        }
+      ]
+    },
+    "columnName": "finc",
+    "expression": "grel:\"id\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column finc using expression grel:\"title1\"",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "245",
+                "l": "245"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Tags",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Tags"
+        },
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "a",
+                "l": "a"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Subfields",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Subfields"
+        },
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "00",
+                "l": "00"
+              }
+            },
+            {
+              "v": {
+                "v": "02",
+                "l": "02"
+              }
+            },
+            {
+              "v": {
+                "v": "04",
+                "l": "04"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Indicators",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Indicators"
+        }
+      ]
+    },
+    "columnName": "finc",
+    "expression": "grel:\"title1\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column finc using expression grel:\"title3\"",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "245",
+                "l": "245"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Tags",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Tags"
+        },
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "b",
+                "l": "b"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Subfields",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Subfields"
+        },
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "00",
+                "l": "00"
+              }
+            },
+            {
+              "v": {
+                "v": "04",
+                "l": "04"
+              }
+            },
+            {
+              "v": {
+                "v": "02",
+                "l": "02"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Indicators",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Indicators"
+        }
+      ]
+    },
+    "columnName": "finc",
+    "expression": "grel:\"title3\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column finc using expression grel:\"title2\"",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "245",
+                "l": "245"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Tags",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Tags"
+        },
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "a",
+                "l": "a"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Subfields",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Subfields"
+        },
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "12",
+                "l": "12"
+              }
+            },
+            {
+              "v": {
+                "v": "13",
+                "l": "13"
+              }
+            },
+            {
+              "v": {
+                "v": "14",
+                "l": "14"
+              }
+            },
+            {
+              "v": {
+                "v": "10",
+                "l": "10"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Indicators",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Indicators"
+        }
+      ]
+    },
+    "columnName": "finc",
+    "expression": "grel:\"title2\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column finc using expression grel:\"title4\"",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "245",
+                "l": "245"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Tags",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Tags"
+        },
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "b",
+                "l": "b"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Subfields",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Subfields"
+        },
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "14",
+                "l": "14"
+              }
+            },
+            {
+              "v": {
+                "v": "10",
+                "l": "10"
+              }
+            },
+            {
+              "v": {
+                "v": "12",
+                "l": "12"
+              }
+            },
+            {
+              "v": {
+                "v": "13",
+                "l": "13"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Indicators",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Indicators"
+        }
+      ]
+    },
+    "columnName": "finc",
+    "expression": "grel:\"title4\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Content using expression grel:value + \"NEUEZEILE\"",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "LDR",
+                "l": "LDR"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Tags",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Tags"
+        }
+      ]
+    },
+    "columnName": "Content",
+    "expression": "grel:value + \"NEUEZEILE\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/multivalued-cell-split",
+    "description": "Split multi-valued cells in column Content",
+    "columnName": "Content",
+    "keyColumnName": "RecordNumber",
+    "separator": "NEUEZEILE",
+    "mode": "plain"
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column finc using expression grel:\"access_facet\"",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "isBlank(value)",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Tags",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Tags"
+        }
+      ]
+    },
+    "columnName": "finc",
+    "expression": "grel:\"access_facet\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Content using expression grel:\"Electronic Resources\"",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "isBlank(value)",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Tags",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Tags"
+        }
+      ]
+    },
+    "columnName": "Content",
+    "expression": "grel:\"Electronic Resources\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/column-reorder",
+    "description": "Reorder columns",
+    "columnNames": [
+      "Content",
+      "finc"
+    ]
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "isBlank(value)",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "finc",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "finc"
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/blank-down",
+    "description": "Blank down cells in column finc",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "finc"
+  },
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column Content",
+    "columnName": "Content",
+    "keyColumnName": "Content",
+    "separator": "$"
+  },
+  {
+    "op": "core/key-value-columnize",
+    "description": "Columnize by key column finc and value column Content with note column ",
+    "keyColumnName": "finc",
+    "valueColumnName": "Content",
+    "noteColumnName": ""
+  },
+  {
+    "op": "core/column-reorder",
+    "description": "Reorder columns",
+    "columnNames": [
+      "id",
+      "access_facet",
+      "author",
+      "title1",
+      "title2",
+      "title3",
+      "title4"
+    ]
+  },
+  {
+    "op": "core/column-addition",
+    "description": "Create column title at index 4 based on column title1 using expression grel:forNonBlank(cells[\"title1\"].value,v,v,\"\") + forNonBlank(cells[\"title2\"].value,v,\" \"+v,\"\") + forNonBlank(cells[\"title3\"].value,v,\" \"+v,\"\") + forNonBlank(cells[\"title4\"].value,v,\" \"+v,\"\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "newColumnName": "title",
+    "columnInsertIndex": 4,
+    "baseColumnName": "title1",
+    "expression": "grel:forNonBlank(cells[\"title1\"].value,v,v,\"\") + forNonBlank(cells[\"title2\"].value,v,\" \"+v,\"\") + forNonBlank(cells[\"title3\"].value,v,\" \"+v,\"\") + forNonBlank(cells[\"title4\"].value,v,\" \"+v,\"\")",
+    "onError": "set-to-blank"
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column title using expression grel:value.trim().slice(0,-1)",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "title",
+    "expression": "grel:value.trim().slice(0,-1)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/column-reorder",
+    "description": "Reorder columns",
+    "columnNames": [
+      "id",
+      "access_facet",
+      "author",
+      "title"
+    ]
+  }
+]

@@ -33,8 +33,6 @@
 
 * [Metadaten eines Anbieters im CSV-Format](weitere-anwendungsfalle/metadaten-eines-anbieters-im-csv-format.md)
 * [Nachlässe aus Kalliope via SRU](weitere-anwendungsfalle/nachlasse-aus-kalliope-via-sru.md)
-* [CSV zu MIDAS-XML und MIDAS-XML zu Excel](weitere-anwendungsfalle/csv-zu-midas-xml-und-midas-xml-zu-excel.md)
-* [Dublin Core XML manipulieren](weitere-anwendungsfalle/dublin-core-xml-manipulieren.md)
 * [RDF vom AV-Portal der TIB](weitere-anwendungsfalle/rdf-vom-av-portal-der-tib.md)
 
 ## Suchindex Solr
