@@ -19,8 +19,8 @@ Ein Import in OpenRefine (Format: RDF/N3) ergibt folgendes Bild:
 Die benötigten Daten können also anhand des Typs (http://www.w3.ord/1999/02/22-rdf-syntax-ns#type) separiert werden.
 
 Ergebnis:
-* Collections: [tib-av-portal-export-1-0-3-nt-collections.tsv](https://felixlohmeier.gitbooks.io/summerschool-openrefine/content/weitere-anwendungsfaelle/tib-av-portal-export-1-0-3-nt-collections.tsv)
-* Movies: [tib-av-portal-export-1-0-3-nt-movies.tsv](https://felixlohmeier.gitbooks.io/summerschool-openrefine/content/weitere-anwendungsfaelle/tib-av-portal-export-1-0-3-nt-movies.tsv)
+* Collections: [tib-av-portal-export-1-0-3-nt-collections.tsv](https://felixlohmeier.gitbooks.io/summerschool-openrefine/content/weitere-anwendungsfalle/tib-av-portal-export-1-0-3-nt-collections.tsv)
+* Movies: [tib-av-portal-export-1-0-3-nt-movies.tsv](https://felixlohmeier.gitbooks.io/summerschool-openrefine/content/weitere-anwendungsfalle/tib-av-portal-export-1-0-3-nt-movies.tsv)
 
 Achtung: Bei dieser einfachen Extraktion der Daten gehen Daten verloren. Die Gesamtzahl der auf diesem Weg extrahierten Filme (5147) entspricht nicht der Anzahl der Filme im Online-Katalog (vgl. z.B. Zahlen in der [Übersicht nach Publishern](https://av.tib.eu/publishers). Außerdem ist bei Mehrfachbelegungen jeweils nur der erste Wert erhalten geblieben. Die hier extrahierten Daten können also nur Testzwecken dienen. Für eine produktive Verarbeitung müsste die Datenextraktion mit OpenRefine komplexer erfolgen. Alternativ könnte auch mit einem Triple Store gearbeitet werden. Auf der Webseite des AV-Portals sind Beispiele für die Verarbeitung mit Blazegraph beschrieben. Über Select-Statements lassen sich die gewünschten Daten direkt auflösen und anschließend extrahieren, vgl. [https://av.tib.eu/opendata](https://av.tib.eu/opendata).
 
@@ -31,4 +31,4 @@ Eine Zuordnung der Testdaten zum [finc-Schema](https://github.com/finc/index/blo
 Zur Auflösung der URLs auf Ressourcen (z.B. Autor http://av.tib.eu/resource/Lauth__G%C3%BCnter_Jakob) ist es erforderlich aus dem Gesamtabzug der Daten weitere Teilbestandteile zu extrahieren, in ein weiteres OpenRefine-Projekt zu laden und über die Cross-Funktion zu verknüpfen. Es wäre mit OpenRefine auch möglich, die Daten live über eine HTTP-Schnittstelle abzufragen, wenn die TIB diese anbieten würde.
 
 Zwischenstand:
-* OpenRefine-Projekt mit Änderungshistorie: [tib-av-portal-finc-schema.tsv](https://felixlohmeier.gitbooks.io/summerschool-openrefine/content/weitere-anwendungsfaelle/tib-av-portal-finc-schema.openrefine.tar.gz)
+* OpenRefine-Projekt mit Änderungshistorie: [tib-av-portal-finc-schema.tsv](https://felixlohmeier.gitbooks.io/summerschool-openrefine/content/weitere-anwendungsfalle/tib-av-portal-finc-schema.openrefine.tar.gz)
