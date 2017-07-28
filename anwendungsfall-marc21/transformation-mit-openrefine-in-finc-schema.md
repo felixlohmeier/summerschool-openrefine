@@ -100,4 +100,7 @@ Beispiel für Titel
 
 Wählen Sie oben rechts im Menü Export den Menüpunkt `Tab-separated-value`
 
-Ergebnis: [wiley.tsv](https://www.felixlohmeier.de/slub/wiley/wiley.tsv) (aus Lizenzgründen zugriffsgeschützt)
+## Zwischenstand aus der Summerschool mit weiteren Transformationsschritten
+
+* OpenRefine-Projekt mit Änderungshistorie: [wiley.openrefine.tar.gz](https://www.felixlohmeier.de/slub/wiley/wiley.openrefine.tar.gz) (aus Lizenzgründen zugriffsgeschützt)
+
